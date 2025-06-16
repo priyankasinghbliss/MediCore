@@ -1,1 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Vinyl&display=swap');
 @import "tailwindcss";
+
+* {
+  font-family: Outfit, sans-serif;
+}
+
+@theme {
+  --color-primary: #188067;
+  --color-secondary: #1bab85;
+  --color-tertiary: #e7e6eb;
+  --color-accent: #66d1a3;
+
+  --gridTemplateColumns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.custom-shape-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+.custom-shape-divider .shape-fill {
+  fill: #ffffff;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider svg {
+    width: calc(110% + 1.3px);
+    height: 60px;
+  }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider svg {
+    width: calc(110% + 1.3px);
+    height: 50px;
+  }
+}
+
+.active hr {
+  @apply block;
+}
+
+::-webkit-scrollbar {
+  @apply hidden;
+}
+
+@media (max-width:740px) {
+  .active p {
+    @apply bg-primary;
+  }
+}
